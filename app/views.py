@@ -56,6 +56,7 @@ def delete_single_purchase(purchase_id):
     if request.method == 'POST':
         db.session.delete(purchase)
         db.session.commit()
+        flash(f'Данные о продажe под номером {purchase_id} успешно удален','success' )
         return redirect(url_for('purchase'))
 
 def item_views():
